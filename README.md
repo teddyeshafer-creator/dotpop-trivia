@@ -8,7 +8,7 @@ A fast, interactive dot-matching trivia game powered by a simple Q/A structure. 
 
 ## 🎮 Live Demo
 
-[Coming soon](https://github.com/yourusername/dotpop-trivia)
+https://teddyeshafer-creator.github.io/dotpop-trivia/
 
 ## ✨ Features
 
