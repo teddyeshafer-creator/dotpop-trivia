@@ -1,0 +1,517 @@
+/* ============================================================
+   Reset / Squarespace overrides
+   ============================================================ */
+body,
+.main-content,
+.sqs-layout,
+.sqs-block {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+}
+
+/* ============================================================
+   Base
+   ============================================================ */
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: "Segoe UI", system-ui, sans-serif;
+  background: linear-gradient(135deg, #0f2027 0%, #203a43 50%, #2c5364 100%);
+  min-height: 100vh;
+  color: #fff;
+  text-align: center;
+  padding: 24px 16px 40px;
+  margin: 0;
+}
+
+/* ============================================================
+   Main game container
+   ============================================================ */
+.game-container {
+  max-width: 960px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(0, 255, 153, 0.2);
+  border-radius: 24px;
+  padding: 28px 24px 32px;
+  box-shadow: 0 8px 48px rgba(0, 0, 0, 0.5);
+}
+
+/* ============================================================
+   Title area
+   ============================================================ */
+.title-area {
+  margin-bottom: 20px;
+}
+
+.title-area h1 {
+  font-size: clamp(1.6rem, 5vw, 2.6rem);
+  font-weight: 900;
+  letter-spacing: -0.5px;
+  margin: 0 0 6px;
+}
+
+.title-emoji {
+  color: #fff;
+  font-size: 1.1em;
+}
+
+.title-text {
+  background: linear-gradient(90deg, #00ff99, #00cfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  color: rgba(255, 255, 255, 0.55);
+  margin: 0;
+}
+
+/* ============================================================
+   HUD
+   ============================================================ */
+.hud {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.hud-item {
+  background: rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 255, 153, 0.3);
+  border-radius: 12px;
+  padding: 8px 18px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  min-width: 90px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+}
+
+.hud-item .hud-label {
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(255, 255, 255, 0.45);
+}
+
+.hud-item .hud-value {
+  font-size: 1.25rem;
+  font-weight: 800;
+  color: #00ff99;
+}
+
+/* ============================================================
+   Category columns grid
+   ============================================================ */
+.category-columns {
+  display: flex;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.category-column {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: rgba(0, 0, 0, 0.35);
+  border: 1px solid rgba(0, 255, 153, 0.35);
+  border-radius: 16px;
+  padding: 16px 12px;
+  min-width: 90px;
+  transition: border-color 0.3s;
+}
+
+.category-column:hover {
+  border-color: rgba(0, 255, 153, 0.7);
+}
+
+.category-column h3 {
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: #00ff99;
+  margin: 0 0 6px;
+}
+
+/* ============================================================
+   Dot buttons
+   ============================================================ */
+.answer-dots {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+}
+
+.dot {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.6);
+  border: 2px solid #00ff99;
+  color: #00ff99;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  font-weight: 800;
+  font-size: 0.78rem;
+  letter-spacing: -0.3px;
+  user-select: none;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.2s ease, border-color 0.2s ease;
+}
+
+.dot:hover:not([style*="pointer-events: none"]) {
+  transform: scale(1.12);
+  box-shadow: 0 0 14px 3px rgba(0, 255, 153, 0.5);
+}
+
+.dot.active {
+  border-color: #3399ff !important;
+  background: rgba(51, 153, 255, 0.2) !important;
+  box-shadow: 0 0 12px 3px rgba(51, 153, 255, 0.5);
+  color: #3399ff;
+}
+
+.dot.glowing {
+  background: #00ffaa;
+  border-color: #00ffaa;
+  box-shadow: 0 0 14px 5px rgba(0, 255, 170, 0.6);
+  color: #000;
+}
+
+.dot.incorrect {
+  background: rgba(255, 50, 50, 0.25);
+  border-color: #ff4444;
+  box-shadow: 0 0 10px 4px rgba(255, 68, 68, 0.5);
+  color: #ff6666;
+}
+
+/* ============================================================
+   Modal
+   ============================================================ */
+.card-modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: #111c2b;
+  border: 2px solid #00ff99;
+  padding: 28px 24px;
+  border-radius: 22px;
+  z-index: 1000;
+  width: min(340px, 92vw);
+  text-align: center;
+  box-shadow: 0 12px 60px rgba(0, 0, 0, 0.7);
+  animation: fadein 0.2s ease-in-out;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 14px;
+  background: transparent;
+  color: #00ff99;
+  font-size: 22px;
+  border: none;
+  cursor: pointer;
+  line-height: 1;
+  opacity: 0.7;
+  transition: opacity 0.2s;
+}
+.close-btn:hover { opacity: 1; }
+
+@keyframes fadein {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.9); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+.card-modal h3 { margin: 0 0 14px; color: #00ff99; font-size: 1.05rem; }
+.card-modal p  { font-size: 0.97rem; line-height: 1.5; color: rgba(255,255,255,0.85); }
+
+/* ============================================================
+   Celebration overlay
+   ============================================================ */
+.celebration {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(135deg, rgba(0,255,150,0.95), rgba(0,207,255,0.95));
+  color: #000;
+  padding: 32px 56px;
+  border-radius: 24px;
+  font-size: 1.4rem;
+  font-weight: 800;
+  z-index: 9999;
+  text-align: center;
+  animation: popFade 3.5s ease-out forwards;
+  box-shadow: 0 8px 48px rgba(0,0,0,0.5);
+}
+
+@keyframes popFade {
+  0%   { transform: translate(-50%, -50%) scale(0.7); opacity: 0; }
+  25%  { transform: translate(-50%, -50%) scale(1.1); opacity: 1; }
+  75%  { transform: translate(-50%, -50%) scale(1);   opacity: 1; }
+  100% { transform: translate(-50%, -50%) scale(1);   opacity: 0; }
+}
+
+/* ============================================================
+   Footer buttons
+   ============================================================ */
+.game-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+.play-again-btn {
+  background: linear-gradient(90deg, #00ff99, #00cfff);
+  color: #000;
+  border: none;
+  padding: 11px 28px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 800;
+  cursor: pointer;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+.play-again-btn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 4px 20px rgba(0, 255, 153, 0.45);
+}
+
+.reset-btn {
+  background: transparent;
+  color: rgba(255, 255, 255, 0.45);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  padding: 8px 22px;
+  border-radius: 10px;
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 0.2s, border-color 0.2s, background 0.2s;
+}
+.reset-btn:hover {
+  color: #fff;
+  border-color: rgba(255, 255, 255, 0.4);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.powered-by {
+  font-size: 0.72rem;
+  color: rgba(255, 255, 255, 0.3);
+  margin: 4px 0 0;
+}
+
+/* ============================================================
+   Game container entrance
+   ============================================================ */
+
+/* ============================================================
+   Best scores display
+   ============================================================ */
+.best-scores {
+  font-size: 0.8rem;
+  color: rgba(255, 255, 255, 0.45);
+  margin-bottom: 14px;
+}
+
+.best-scores strong {
+  color: #00ff99;
+  font-weight: 700;
+}
+
+/* ============================================================
+   Category complete badge
+   ============================================================ */
+.category-column.complete {
+  border-color: rgba(0, 255, 153, 0.8);
+  background: rgba(0, 255, 153, 0.06);
+}
+
+.category-column.complete::after {
+  content: "✓";
+  position: absolute;
+  top: 6px;
+  right: 8px;
+  color: #00ff99;
+  font-size: 1rem;
+  font-weight: 800;
+}
+
+.category-column {
+  position: relative;
+}
+
+/* ============================================================
+   Category stagger animation
+   ============================================================ */
+.category-column {
+  animation: categoryStagger 0.4s ease-out backwards;
+}
+
+@keyframes categoryStagger {
+  from { opacity: 0; transform: scale(0.92) translateY(-8px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+/* ============================================================
+   Responsive
+   ============================================================ */
+@media (max-width: 600px) {
+  .game-container { padding: 18px 10px 24px; border-radius: 16px; }
+  .hud { gap: 8px; }
+  .hud-item { padding: 6px 12px; min-width: 72px; }
+  .category-columns { gap: 10px; }
+  .category-column { padding: 12px 8px; min-width: 78px; }
+  .dot { width: 46px; height: 46px; font-size: 0.72rem; }
+}
+
+/* ============================================================
+   Dot feedback animations
+   ============================================================ */
+@keyframes dotPop {
+  0%   { transform: scale(1); }
+  35%  { transform: scale(1.32); }
+  65%  { transform: scale(0.92); }
+  100% { transform: scale(1); }
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0) rotate(0); }
+  20%  { transform: translateX(-5px) rotate(-3deg); }
+  40%  { transform: translateX(5px) rotate(3deg); }
+  60%  { transform: translateX(-3px) rotate(-1deg); }
+  80%  { transform: translateX(3px) rotate(1deg); }
+}
+
+.dot.pop {
+  animation: dotPop 0.38s ease-out;
+}
+
+.dot.shake {
+  animation: shake 0.4s ease-out;
+  box-shadow: 0 0 16px 6px rgba(255, 60, 60, 0.75) !important;
+  border-color: #ff4444 !important;
+}
+
+/* ============================================================
+   Streak HUD
+   ============================================================ */
+#hudStreakItem.streak-hot .hud-value {
+  color: #ff9900;
+}
+
+/* ============================================================
+   Match line SVG overlay
+   ============================================================ */
+.match-line-svg {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
+  z-index: 500;
+}
+
+.match-line-svg line {
+  stroke: #00ff99;
+  stroke-width: 2.5;
+  stroke-dasharray: 8 5;
+  opacity: 1;
+  transition: opacity 0.7s ease;
+}
+
+/* ============================================================
+   Completion modal
+   ============================================================ */
+.completion-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.78);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  animation: fadeinBg 0.3s ease;
+}
+
+@keyframes fadeinBg {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+.completion-card {
+  background: linear-gradient(160deg, #0d1b2a 0%, #112233 100%);
+  border: 2px solid #00ff99;
+  border-radius: 24px;
+  padding: 36px 36px 28px;
+  text-align: center;
+  max-width: min(400px, 92vw);
+  width: 100%;
+  box-shadow: 0 20px 80px rgba(0, 0, 0, 0.85);
+  animation: cardSlideIn 0.38s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes cardSlideIn {
+  from { transform: scale(0.72); opacity: 0; }
+  to   { transform: scale(1);    opacity: 1; }
+}
+
+.completion-card h2 {
+  font-size: clamp(1.5rem, 5vw, 2rem);
+  font-weight: 900;
+  margin: 0 0 6px;
+  background: linear-gradient(90deg, #00ff99, #00cfff);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.completion-sub {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.5);
+  margin: 0 0 22px;
+}
+
+.completion-stats {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  margin-bottom: 26px;
+}
+
+.stat-box {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 14px 8px;
+}
+
+.stat-box .stat-label {
+  display: block;
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: rgba(255, 255, 255, 0.4);
+  margin-bottom: 5px;
+}
+
+.stat-box .stat-value {
+  font-size: 1.6rem;
+  font-weight: 800;
+  color: #00ff99;
+}

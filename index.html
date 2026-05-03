@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dotpop Trivia</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="game-container">
+
+      <!-- Title -->
+      <div class="title-area">
+        <h1><span class="title-emoji">🧠</span> <span class="title-text">Dotpop Trivia</span></h1>
+        <p class="subtitle">Tap a question dot, then tap its matching answer dot.</p>
+      </div>
+
+      <!-- HUD -->
+      <div class="hud" id="hud">
+        <div class="hud-item">
+          <span class="hud-label">Time</span>
+          <span class="hud-value" id="hudTimer">0:00</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Correct</span>
+          <span class="hud-value" id="hudCorrect">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Incorrect</span>
+          <span class="hud-value" id="hudIncorrect">0</span>
+        </div>
+        <div class="hud-item">
+          <span class="hud-label">Matched</span>
+          <span class="hud-value"><span id="hudMatches">0</span>/<span id="hudTotal">0</span></span>
+        </div>
+        <div class="hud-item" id="hudStreakItem">
+          <span class="hud-label">Streak</span>
+          <span class="hud-value" id="hudStreak">—</span>
+        </div>
+      </div>
+
+      <!-- Best Scores -->
+      <div class="best-scores" id="bestScores" style="display:none;">
+        <span>Best Time: <strong id="bestTime">—</strong></span>
+        <span style="margin-left:16px;">Best Accuracy: <strong id="bestAccuracy">—</strong></span>
+      </div>
+
+      <!-- Categories -->
+      <div class="category-columns" id="categoryColumns"></div>
+
+      <!-- Footer -->
+      <div class="game-footer">
+        <button id="playAgainBtn" class="play-again-btn" style="display:none" onclick="location.reload()">
+          Play Again
+        </button>
+        <button class="reset-btn" onclick="resetGame()">↺ Reset Game</button>
+        <p class="powered-by">Powered by <strong>DotPop Voice™</strong></p>
+      </div>
+
+    </div>
+
+    <!-- Celebration overlay (outside container so it can go full-screen) -->
+    <div id="celebration" class="celebration" style="display:none"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
